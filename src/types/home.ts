@@ -1,0 +1,1 @@
+type Home = "home";

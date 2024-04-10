@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowJs": true, // js 허용
+    "esModuleInterop": true, // import * as name ~ 사용 가능하게 설정
+    "allowSyntheticDefaultImports": true, // default export를 쓰지 않은 모듈도 default import가 가능하게 할건지 여부
+    "forceConsistentCasingInFileNames": true, // 같은 파일에 대한 일관되지 않은 참조를 허용하지 않을지 여부
+
+    /* base */
+    "target": "ES5",
+    "useDefineForClassFields": true,
+    "lib": ["ES5", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "Bundler", // vite는 Bundler로 교체
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": false, // 사용하지 않는 변수를 잡아줌
+    "noUnusedParameters": false, // 사용하지 않는 파라미터를 잡아줌
+    "noFallthroughCasesInSwitch": false // switch 문제 서 fallthrough를 잡아줌
+  }
+}
