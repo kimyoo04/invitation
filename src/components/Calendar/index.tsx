@@ -1,4 +1,5 @@
 import Section from '@/layouts/Section'
+import Center from '@/ui/Center'
 
 import CalendarContent from './CalendarContent'
 import CalendarHeader from './CalendarHeader'
@@ -6,10 +7,10 @@ import CalendarHeader from './CalendarHeader'
 export default function Calendar() {
   return (
     <Section>
-      <div className="flex h-full w-full flex-col items-center justify-center">
+      <Center.Column>
         <CalendarHeader />
         <CalendarContent />
-      </div>
+      </Center.Column>
     </Section>
   )
 }

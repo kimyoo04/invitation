@@ -4,11 +4,11 @@ import FullScreenMsg from '@/components/contents/FullScreenMsg'
 import Gallery from '@/components/contents/Gallery'
 import GuestBook from '@/components/contents/GuestBook'
 import Heading from '@/components/contents/Heading'
-import TimeCounter from '@/components/contents/TimeCounter'
 import TimeLaps from '@/components/contents/TimeLaps'
 import WayToCome from '@/components/contents/WayToCome'
 import WeddingInfo from '@/components/contents/WeddingInfo'
 import Wreath from '@/components/contents/Wreath'
+import DDayCountDown from '@/components/DDayCountDown'
 import ErrorBoundary from '@/error/errorBoundary'
 import StickyBar from '@/layouts/StickyBar'
 import { createFileRoute } from '@tanstack/react-router'
@@ -32,7 +32,7 @@ function Home() {
       <FullScreenMsg />
       <WeddingInfo />
       <Calendar />
-      <TimeCounter />
+      <DDayCountDown />
       <Gallery />
       <Wreath />
       <ContactAndAccount />

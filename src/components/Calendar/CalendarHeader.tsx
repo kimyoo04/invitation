@@ -1,7 +1,9 @@
+import Center from '@/ui/Center'
+
 export default function CalendarHeader() {
   return (
-    <div>
+    <Center.Column>
       <p>Header</p>
-    </div>
+    </Center.Column>
   )
 }
