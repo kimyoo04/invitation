@@ -1,13 +1,13 @@
-import path from "path";
-import { defineConfig, loadEnv } from "vite";
-import checker from "vite-plugin-checker";
-import svgrPlugin from "vite-plugin-svgr";
-import tsconfigPaths from "vite-tsconfig-paths";
+import path from 'path'
+import { defineConfig, loadEnv } from 'vite'
+import checker from 'vite-plugin-checker'
+import svgrPlugin from 'vite-plugin-svgr'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
-import react from "@vitejs/plugin-react";
+import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), "");
+  const env = loadEnv(mode, process.cwd(), '')
 
   return {
     server: {
@@ -23,18 +23,18 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         output: {
           globals: {
-            react: "React",
+            react: 'React',
           },
         },
       },
     },
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src"),
+        '@': path.resolve(__dirname, './src'),
       },
     },
     define: {
-      "process.env": env,
+      'process.env': env,
     },
     plugins: [
       react(),
@@ -43,9 +43,9 @@ export default defineConfig(({ mode }) => {
         typescript: true,
       }),
       tsconfigPaths({
-        projects: [path.resolve(__dirname, "./tsconfig.json")],
+        projects: [path.resolve(__dirname, './tsconfig.json')],
       }),
       svgrPlugin(),
     ],
-  };
-});
+  }
+})

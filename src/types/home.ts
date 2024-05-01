@@ -1,1 +1,1 @@
-type Home = "home";
+type Home = 'home'

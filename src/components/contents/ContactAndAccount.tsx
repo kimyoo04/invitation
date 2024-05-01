@@ -1,5 +1,5 @@
-import Section from "@/layouts/Section";
+import Section from '@/layouts/Section'
 
 export default function ContactAndAccount() {
-  return <Section>ContactAndAccount</Section>;
+  return <Section>ContactAndAccount</Section>
 }

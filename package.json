@@ -10,7 +10,7 @@
     "generate": "npx tsr generate",
     "--": "----------------------------------------------------------------",
     "lint": "eslint \"packages/**/*.{js,jsx,ts,tsx}\" --fix",
-    "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
+    "format": "prettier --write --cache . --ignore-path .gitignore",
     "prepare": "npx husky install"
   },
   "engines": {

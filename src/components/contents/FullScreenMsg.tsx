@@ -1,5 +1,5 @@
-import Section from "@/layouts/Section";
+import Section from '@/layouts/Section'
 
 export default function FullScreenMsg() {
-  return <Section>FullScreenMsg</Section>;
+  return <Section>FullScreenMsg</Section>
 }

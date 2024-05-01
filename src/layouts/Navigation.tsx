@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from '@tanstack/react-router'
 
 export default function Navigation() {
   return (
@@ -6,16 +6,16 @@ export default function Navigation() {
       <Link
         to="/"
         activeProps={{
-          className: "font-bold",
+          className: 'font-bold',
         }}
         activeOptions={{ exact: true }}
       >
         Home
       </Link>
       <Link
-        to={"/posts"}
+        to={'/posts'}
         activeProps={{
-          className: "font-bold",
+          className: 'font-bold',
         }}
       >
         Posts
@@ -23,11 +23,11 @@ export default function Navigation() {
       <Link
         to="/layout-a"
         activeProps={{
-          className: "font-bold",
+          className: 'font-bold',
         }}
       >
         Layout
       </Link>
     </div>
-  );
+  )
 }

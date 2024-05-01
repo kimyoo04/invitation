@@ -1,11 +1,11 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react'
 
 function BarItem({ children }: PropsWithChildren) {
   return (
     <div className="flex h-16 w-16 items-center justify-center bg-red-500">
       {children}
     </div>
-  );
+  )
 }
 
 export default function LeftStickyBar() {
@@ -18,5 +18,5 @@ export default function LeftStickyBar() {
       {/* 연락하기 */}
       <BarItem>3</BarItem>
     </div>
-  );
+  )
 }

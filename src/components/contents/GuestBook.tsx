@@ -1,5 +1,5 @@
-import Section from "@/layouts/Section";
+import Section from '@/layouts/Section'
 
 export default function GuestBook() {
-  return <Section>GuestBook</Section>;
+  return <Section>GuestBook</Section>
 }

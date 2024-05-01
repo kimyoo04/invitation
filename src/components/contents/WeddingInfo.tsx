@@ -1,5 +1,5 @@
-import Section from "@/layouts/Section";
+import Section from '@/layouts/Section'
 
 export default function WeddingInfo() {
-  return <Section>WeddingInfo - location & DueDate</Section>;
+  return <Section>WeddingInfo - location & DueDate</Section>
 }
