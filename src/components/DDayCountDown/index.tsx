@@ -1,16 +1,8 @@
 import Section from '@/layouts/Section'
 import Center from '@/ui/Center'
 
+import NumberArea from './NumberArea'
 import useCalculateTimeRemaining from './useCalculateTimeRemaining'
-
-function NumberArea({ value, unit }: { value: string; unit: string }) {
-  return (
-    <Center.Column>
-      <span className="gap text-2xl">{value}</span>
-      <span>{unit.toUpperCase()}</span>
-    </Center.Column>
-  )
-}
 
 export default function DDayCountDown() {
   const targetDate = new Date(2025, 10, 15)
