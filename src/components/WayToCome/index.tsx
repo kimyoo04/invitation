@@ -7,7 +7,7 @@ import WayInfo from './WayInfo'
 export default function WayToCome() {
   return (
     <Section>
-      <Center.Column className="w-full gap-8 px-5">
+      <Center.Column className="w-full gap-8">
         <NaverMap />
         <WayInfo />
       </Center.Column>

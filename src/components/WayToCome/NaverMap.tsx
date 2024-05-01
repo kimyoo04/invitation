@@ -28,7 +28,7 @@ export default function NaverMap() {
   }, [])
 
   return (
-    <div className="border-1 h-80 w-full overflow-hidden rounded-md">
+    <div className="h-80 w-full overflow-hidden rounded-md border border-solid border-gray-300">
       <div ref={mapElement} className="h-80 w-full " />
     </div>
   )

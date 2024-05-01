@@ -29,56 +29,56 @@ export const data = {
       },
     },
     groom: {
+      type: '신랑측',
       name: '김유',
+      phoneNumber: '010-8131-5224',
       account: {
         bankName: '농협',
         accountNumber: '110-356-123433',
-        kakaopayLink: 'https://qr.kakaopay.com/Ej8HNpNJZ',
       },
-      phoneNumber: '010-8131-5224',
       parents: [
         {
           name: '김종관',
+          phoneNumber: '010-4190-5224',
           account: {
             bankName: '농협',
             accountNumber: '233331-51-061400',
           },
-          phoneNumber: '010-4190-5224',
         },
         {
           name: '배미영',
+          phoneNumber: '010-9148-5224',
           account: {
             bankName: '농협',
             accountNumber: '352-1252-4559-90',
           },
-          phoneNumber: '010-9148-5224',
         },
       ],
     },
     bride: {
+      type: '신부측',
       name: '고유진',
+      phoneNumber: '010-6667-6187',
       account: {
         bankName: '신한',
         accountNumber: '352-0952-4669-11',
-        kakaopayLink: 'https://qr.kakaopay.com/Ej8HNpNJZ',
       },
-      phoneNumber: '010-6667-6187',
       parents: [
         {
-          name: '고윤범',
+          name: '고현범',
+          phoneNumber: '010-6667-6187',
           account: {
             bankName: '신한',
             accountNumber: '3333-1112-11932',
           },
-          phoneNumber: '010-6667-6187',
         },
         {
           name: '배태주',
+          phoneNumber: '010-3396-6187',
           account: {
             bankName: '신한',
             accountNumber: '222-19-8842-472',
           },
-          phoneNumber: '010-6667-6187',
         },
       ],
     },

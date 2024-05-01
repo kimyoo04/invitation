@@ -1,5 +1,5 @@
 import Calendar from '@/components/Calendar'
-import ContactAndAccount from '@/components/contents/ContactAndAccount'
+import ContactAndAccount from '@/components/ContactAndAccount'
 import FullScreenMsg from '@/components/contents/FullScreenMsg'
 import GuestBook from '@/components/contents/GuestBook'
 import TimeLaps from '@/components/contents/TimeLaps'
