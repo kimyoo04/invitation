@@ -1,15 +1,15 @@
-import MaxWidthContainer from "@/layouts/MaxWidthContainer";
-import Navigation from "@/layouts/Navigation";
-import { QueryClient } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { Outlet, rootRouteWithContext } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+import MaxWidthContainer from '@/layouts/MaxWidthContainer'
+import Navigation from '@/layouts/Navigation'
+import { QueryClient } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { createRootRouteWithContext, Outlet } from '@tanstack/react-router'
+import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 
-export const Route = rootRouteWithContext<{
-  queryClient: QueryClient;
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient
 }>()({
   component: RootComponent,
-});
+})
 
 function RootComponent() {
   return (
@@ -29,5 +29,5 @@ function RootComponent() {
       <ReactQueryDevtools buttonPosition="top-right" />
       <TanStackRouterDevtools position="bottom-right" />
     </main>
-  );
+  )
 }

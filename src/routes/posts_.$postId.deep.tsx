@@ -1,18 +1,18 @@
-import { postQueryOptions } from "@/queries/postQueryOptions";
-import { FileRoute, Link } from "@tanstack/react-router";
+import { postQueryOptions } from '@/queries/postQueryOptions'
+import { createFileRoute, Link } from '@tanstack/react-router'
 
-import { PostErrorComponent } from "./posts.$postId";
+import { PostErrorComponent } from './posts.$postId'
 
-export const Route = new FileRoute("/posts_/$postId/deep").createRoute({
+export const Route = createFileRoute('/posts_/$postId/deep')({
   loader: ({ context: { queryClient }, params: { postId } }) => {
-    return queryClient.ensureQueryData(postQueryOptions(postId));
+    return queryClient.ensureQueryData(postQueryOptions(postId))
   },
   errorComponent: PostErrorComponent,
   component: PostDeepComponent,
-});
+})
 
 function PostDeepComponent() {
-  const post = Route.useLoaderData();
+  const post = Route.useLoaderData()
 
   return (
     <div className="space-y-2 p-2">
@@ -25,5 +25,5 @@ function PostDeepComponent() {
       <h4 className="text-xl font-bold underline">{post.title}</h4>
       <div className="text-sm">{post.body}</div>
     </div>
-  );
+  )
 }

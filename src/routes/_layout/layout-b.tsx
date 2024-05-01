@@ -1,9 +1,9 @@
-import { FileRoute } from "@tanstack/react-router";
+import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = new FileRoute("/_layout/layout-b").createRoute({
+export const Route = createFileRoute('/_layout/layout-b')({
   component: LayoutBComponent,
-});
+})
 
 function LayoutBComponent() {
-  return <div>I'm B!</div>;
+  return <div>I'm B!</div>
 }

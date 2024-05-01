@@ -1,29 +1,29 @@
-import { postQueryOptions } from "@/queries/postQueryOptions";
-import { PostNotFoundError } from "@/services/posts";
+import { postQueryOptions } from '@/queries/postQueryOptions'
+import { PostNotFoundError } from '@/services/posts'
 import {
+  createFileRoute,
   ErrorComponent,
-  ErrorRouteProps,
-  FileRoute,
+  ErrorComponentProps,
   Link,
-} from "@tanstack/react-router";
+} from '@tanstack/react-router'
 
-export const Route = new FileRoute("/posts/$postId").createRoute({
+export const Route = createFileRoute('/posts/$postId')({
   loader: ({ context: { queryClient }, params: { postId } }) =>
     queryClient.ensureQueryData(postQueryOptions(postId)),
   errorComponent: PostErrorComponent,
   component: PostComponent,
-});
+})
 
-export function PostErrorComponent({ error }: ErrorRouteProps) {
+export function PostErrorComponent({ error }: ErrorComponentProps) {
   if (error instanceof PostNotFoundError) {
-    return <div>{error.message}</div>;
+    return <div>{error.message}</div>
   }
 
-  return <ErrorComponent error={error} />;
+  return <ErrorComponent error={error} />
 }
 
 function PostComponent() {
-  const post = Route.useLoaderData();
+  const post = Route.useLoaderData()
 
   return (
     <div className="space-y-2">
@@ -34,11 +34,11 @@ function PostComponent() {
         params={{
           postId: post.id,
         }}
-        activeProps={{ className: "text-black font-bold" }}
+        activeProps={{ className: 'text-black font-bold' }}
         className="block py-1 text-blue-800 hover:text-blue-600"
       >
         Deep View
       </Link>
     </div>
-  );
+  )
 }
