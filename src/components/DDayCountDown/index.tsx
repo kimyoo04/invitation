@@ -17,6 +17,8 @@ export default function DDayCountDown() {
         <NumberArea value={timeRemaining.minutes} unit="minutes" />
         <NumberArea value={timeRemaining.seconds} unit="seconds" />
       </Center.Row>
+
+      {/* // TODO - d-day 를 종착지로 재미있는 효과 넣기 */}
     </Section>
   )
 }

@@ -10,7 +10,7 @@ export default function Gallery() {
     <Section>
       <Center.Column className="w-full gap-8">
         <div className="grid grid-cols-2 gap-4">
-          {data.wedding.galleryImages.map((imageName) => (
+          {data.wedding.images.gallery.map((imageName) => (
             <ImageWrapper
               key={imageName}
               path={`/public/images/gallery/${imageName}.jpg`}

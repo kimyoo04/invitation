@@ -85,14 +85,17 @@ export const data = {
       invitation:
         '소중한 분들을 초대합니다\n살랑이는 바람결에\n사랑이 묻어나는 계절입니다.\n여기 곱고 예쁜 두 사람이 사랑을 맺어\n인생의 반려자가 되려 합니다.\n새 인생을 시작하는 이 자리에 오셔서\n축복해 주시면 감사하겠습니다.',
     },
-    galleryImages: [
-      'wedding_01',
-      'wedding_02',
-      'wedding_03',
-      'wedding_04',
-      'wedding_05',
-      'wedding_06',
-    ],
+    images: {
+      main: 'wedding_main',
+      gallery: [
+        'wedding_01',
+        'wedding_02',
+        'wedding_03',
+        'wedding_04',
+        'wedding_05',
+        'wedding_06',
+      ],
+    },
     attendCount: 0,
   },
 }
