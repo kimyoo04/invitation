@@ -13,7 +13,7 @@ export default function Gallery() {
           {data.wedding.images.gallery.map((imageName) => (
             <ImageWrapper
               key={imageName}
-              path={`/public/images/gallery/${imageName}.jpg`}
+              path={`/images/gallery/${imageName}.jpg`}
               alt={imageName}
             />
           ))}

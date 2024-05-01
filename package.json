@@ -25,6 +25,7 @@
     "@tanstack/react-router": "1.26.18",
     "@tanstack/router-cli": "^1.26.16",
     "@tanstack/router-devtools": "^1.26.18",
+    "@types/navermaps": "^3.7.5",
     "autoprefixer": "^10.4.19",
     "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",

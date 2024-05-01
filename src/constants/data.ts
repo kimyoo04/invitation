@@ -9,7 +9,10 @@ export const data = {
       name: '노블레스 웨딩컨벤션 7층 컨벤션홀',
       address:
         '경기도 수원시 팔달구 우만동 팔달문로 128\n수원 노블레스 웨딩컨벤션',
-      link: 'https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,506715,1050669&rt1=&rt2=%EC%88%98%EC%9B%90%EB%85%B8%EB%B8%94%EB%A0%88%EC%8A%A4%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&rtIds=,9846217',
+      link: {
+        name: '웨딩홀 웹사이트',
+        url: 'https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,506715,1050669&rt1=&rt2=%EC%88%98%EC%9B%90%EB%85%B8%EB%B8%94%EB%A0%88%EC%8A%A4%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&rtIds=,9846217',
+      },
       wayToCome: {
         metro: ['셔틀버스 운행 → 분당선 수원시청역 5번출구 수시운행'],
         bus: [

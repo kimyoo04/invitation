@@ -7,7 +7,7 @@ export default function Heading({ children }: PropsWithChildren) {
   return (
     <div className="relative ">
       <img
-        src={`/public/images/${data.wedding.images.main}.jpg`}
+        src={`/images/${data.wedding.images.main}.jpg`}
         alt="main_img"
         className="w-full object-cover"
       />
