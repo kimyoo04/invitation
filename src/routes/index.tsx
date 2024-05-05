@@ -1,14 +1,16 @@
 import Calendar from '@/components/Calendar'
 import ContactAndAccount from '@/components/ContactAndAccount'
-import FullScreenMsg from '@/components/contents/FullScreenMsg'
 import GuestBook from '@/components/contents/GuestBook'
-import TimeLaps from '@/components/contents/TimeLaps'
-import WeddingInfo from '@/components/contents/WeddingInfo'
-import Wreath from '@/components/contents/Wreath'
 import DDayCountDown from '@/components/DDayCountDown'
+import Footer from '@/components/Footer'
+import FunnyScrollEvent from '@/components/FunnyScrollEvent'
 import Gallery from '@/components/Gallery'
 import Heading from '@/components/Heading'
+import Introduce from '@/components/Introduce'
+import Poem from '@/components/Poem'
+import ThanksGreeting from '@/components/ThanksGreeting'
 import WayToCome from '@/components/WayToCome'
+import Wreath from '@/components/Wreath'
 import ErrorBoundary from '@/error/errorBoundary'
 import StickyBar from '@/layouts/StickyBar'
 import { createFileRoute } from '@tanstack/react-router'
@@ -27,10 +29,10 @@ function Home() {
   return (
     <>
       {/* 콘텐츠 */}
-      <TimeLaps />
       <Heading />
-      <FullScreenMsg />
-      <WeddingInfo />
+      <Poem />
+      <Introduce />
+      <FunnyScrollEvent />
       <Calendar />
       <DDayCountDown />
       <Gallery />
@@ -38,6 +40,8 @@ function Home() {
       <ContactAndAccount />
       <GuestBook />
       <WayToCome />
+      <ThanksGreeting />
+      <Footer />
 
       {/* 고정 레이아웃 */}
       <StickyBar />

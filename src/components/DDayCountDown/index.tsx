@@ -5,7 +5,7 @@ import NumberArea from './NumberArea'
 import useCalculateTimeRemaining from './useCalculateTimeRemaining'
 
 export default function DDayCountDown() {
-  const targetDate = new Date(2025, 10, 15)
+  const targetDate = new Date(2025, 11, 15)
 
   const timeRemaining = useCalculateTimeRemaining(targetDate)
 

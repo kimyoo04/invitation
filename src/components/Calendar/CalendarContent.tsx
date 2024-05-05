@@ -24,7 +24,7 @@ const getDaysInMonth = ({
 
 export default function CalendarContent() {
   const year = 2025
-  const month = 8
+  const month = 11
 
   const days = getDaysInMonth({ year, month })
   const startDay = daysOfWeek.indexOf(days[0].day)
