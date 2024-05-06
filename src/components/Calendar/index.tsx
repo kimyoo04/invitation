@@ -1,4 +1,4 @@
-import { Center, Section } from '@/layouts'
+import { Center, ContentGroup, Section } from '@/layouts'
 
 import CalendarContent from './CalendarContent'
 import CalendarHeader from './CalendarHeader'
@@ -6,10 +6,12 @@ import CalendarHeader from './CalendarHeader'
 export default function Calendar() {
   return (
     <Section>
-      <Center.Column>
-        <CalendarHeader />
-        <CalendarContent />
-      </Center.Column>
+      <ContentGroup title="Calendar">
+        <Center.Column>
+          <CalendarHeader />
+          <CalendarContent />
+        </Center.Column>
+      </ContentGroup>
     </Section>
   )
 }
