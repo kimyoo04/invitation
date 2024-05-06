@@ -1,8 +1,8 @@
 import { data } from '@/constants/data'
 import Section from '@/layouts/Section'
 import Center from '@/ui/Center'
+import ImageComponent from '@/ui/ImageComponent'
 
-import ImageWrapper from './ImageWrapper'
 import ViewMoreButton from './ViewMoreButton'
 
 export default function Gallery() {
@@ -11,9 +11,9 @@ export default function Gallery() {
       <Center.Column className="w-full gap-8">
         <div className="grid grid-cols-2 gap-4">
           {data.wedding.images.gallery.map((imageName) => (
-            <ImageWrapper
+            <ImageComponent
               key={imageName}
-              path={`/images/gallery/${imageName}.jpg`}
+              src={`/images/gallery/${imageName}.jpg`}
               alt={imageName}
             />
           ))}
