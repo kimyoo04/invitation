@@ -6,7 +6,7 @@ import Family from './Family'
 export default function Account() {
   return (
     <Section>
-      <ContentGroup title="Contact">
+      <ContentGroup title="Account">
         <Center.Column className="gap-4 md:flex-row">
           <Family data={data.wedding.groom} />
           <Family data={data.wedding.bride} />

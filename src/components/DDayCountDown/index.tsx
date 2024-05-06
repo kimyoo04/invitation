@@ -1,20 +1,24 @@
+import { data } from '@/constants/data'
 import { Center, Section } from '@/layouts'
 
 import NumberArea from './NumberArea'
 import useCalculateTimeRemaining from './useCalculateTimeRemaining'
 
 export default function DDayCountDown() {
-  const targetDate = new Date(2025, 11, 15)
+  const [year, month, dDay] = data.wedding.date.split('-').map(Number)
+  const targetDate = new Date(year, month, dDay)
 
   const timeRemaining = useCalculateTimeRemaining(targetDate)
 
   return (
     <Section>
-      <Center.Row className="gap-12">
-        <NumberArea value={timeRemaining.days} unit="day" />
-        <NumberArea value={timeRemaining.hours} unit="hours" />
-        <NumberArea value={timeRemaining.minutes} unit="minutes" />
-        <NumberArea value={timeRemaining.seconds} unit="seconds" />
+      <Center.Row>
+        <Center.Row className="w-80 justify-between">
+          <NumberArea value={timeRemaining.days} unit="days" />
+          <NumberArea value={timeRemaining.hours} unit="hour" />
+          <NumberArea value={timeRemaining.minutes} unit="min" />
+          <NumberArea value={timeRemaining.seconds} unit="sec" />
+        </Center.Row>
       </Center.Row>
 
       {/* // TODO - d-day 를 종착지로 재미있는 효과 넣기 */}

@@ -9,8 +9,8 @@ export default function NumberArea({
 }) {
   return (
     <Center.Column>
-      <span className="gap text-2xl">{value}</span>
-      <span>{unit.toUpperCase()}</span>
+      <span className="gap text-lg font-semibold">{value}</span>
+      <span className="text-sm ">{unit.toUpperCase()}</span>
     </Center.Column>
   )
 }

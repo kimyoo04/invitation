@@ -21,13 +21,11 @@ function RootComponent() {
       </MaxWidthContainer>
 
       <MaxWidthContainer>
-        <div className="bg-gray-400">
-          <Outlet />
-        </div>
+        <Outlet />
       </MaxWidthContainer>
 
-      <ReactQueryDevtools buttonPosition="top-right" />
-      <TanStackRouterDevtools position="bottom-right" />
+      {/* <ReactQueryDevtools buttonPosition="top-right" /> */}
+      {/* <TanStackRouterDevtools position="bottom-right" /> */}
     </main>
   )
 }

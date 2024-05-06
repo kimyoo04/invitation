@@ -91,6 +91,8 @@ export const data = {
     images: {
       main: 'wedding_main',
       sub: 'wedding_sub',
+      scrollAnimation: 'wedding_scroll_animation', // TODO
+      twoPortraits: ['wedding_groom', 'wedding_bride'],
       gallery: [
         'wedding_01',
         'wedding_02',

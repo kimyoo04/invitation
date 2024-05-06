@@ -1,5 +1,8 @@
 import clsx from 'clsx'
 
+import { data } from '@/constants/data'
+import { Center } from '@/layouts'
+
 const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토']
 const months = Array.from({ length: 13 }, (_, i) => i) // 0 ~ 12
 
@@ -23,9 +26,7 @@ const getDaysInMonth = ({
 }
 
 export default function CalendarContent() {
-  const year = 2025
-  const month = 11
-  const dDay = 25
+  const [year, month, dDay] = data.wedding.date.split('-').map(Number)
 
   const days = getDaysInMonth({ year, month })
   const startDay = daysOfWeek.indexOf(days[0].day)
@@ -35,24 +36,27 @@ export default function CalendarContent() {
     return day === '일' ? 'text-red-500' : ''
   }
 
-  const HighlightDDay = (day: number) => {
+  const highlightDDay = (day: number) => {
     return day === dDay ? 'bg-orange-300 rounded-full text-white font-bold' : ''
   }
 
   return (
-    <div className="p-4">
+    <div>
       <h2 className="mb-4 text-center text-xl">{month} 월</h2>
 
-      <div className="grid grid-cols-7 gap-2 text-center">
+      <div className="grid w-full grid-cols-7 gap-2">
         {daysOfWeek.map((day, indx) => (
-          <div key={indx} className={clsx(['font-bold', highlightSunday(day)])}>
+          <Center.Row
+            key={indx}
+            className={clsx(['font-bold', highlightSunday(day)])}
+          >
             {day}
-          </div>
+          </Center.Row>
         ))}
 
         {emptyDays.map((_, indx) => {
           return (
-            <div key={indx} className="p-2">
+            <div key={indx}>
               <span className="block"></span>
             </div>
           )
@@ -63,12 +67,18 @@ export default function CalendarContent() {
             <div
               key={indx + day.day}
               className={clsx([
-                'flex h-10 w-10 items-center justify-center',
+                'p-2 text-sm sm:text-lg',
                 highlightSunday(day.day),
-                HighlightDDay(day.date),
               ])}
             >
-              <span>{day.date}</span>
+              <Center.Row
+                className={clsx([
+                  'flex h-6 w-6 sm:h-7 sm:w-7',
+                  highlightDDay(day.date),
+                ])}
+              >
+                <span>{day.date}</span>
+              </Center.Row>
             </div>
           )
         })}

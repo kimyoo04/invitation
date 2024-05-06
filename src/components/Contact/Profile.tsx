@@ -1,3 +1,5 @@
+import { Flex } from '@/layouts'
+
 export type ProfileType = {
   name: string
   phoneNumber: string
@@ -13,12 +15,9 @@ interface ProfileProps {
 
 export default function Profile({ data }: ProfileProps) {
   return (
-    <div>
+    <Flex className="gap-4">
       <div>{data.name}</div>
       <div>{data.phoneNumber}</div>
-      <div>
-        <div>{`${data.account.bankName} ${data.account.accountNumber}`}</div>
-      </div>
-    </div>
+    </Flex>
   )
 }

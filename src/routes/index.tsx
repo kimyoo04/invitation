@@ -48,7 +48,7 @@ function Home() {
       <Footer />
 
       {/* 고정 레이아웃 */}
-      <StickyBar />
+      {/* <StickyBar /> */}
     </>
   )
 }
