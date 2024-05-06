@@ -8,7 +8,7 @@ import Gallery from '@/components/Gallery'
 import Heading from '@/components/Heading'
 import Introduce from '@/components/Introduce'
 import Poem from '@/components/Poem'
-import ThanksGreeting from '@/components/ThanksGreeting'
+import Thanks from '@/components/Thanks'
 import WayToCome from '@/components/WayToCome'
 import Wreath from '@/components/Wreath'
 import ErrorBoundary from '@/error/errorBoundary'
@@ -40,7 +40,7 @@ function Home() {
       <ContactAndAccount />
       <GuestBook />
       <WayToCome />
-      <ThanksGreeting />
+      <Thanks />
       <Footer />
 
       {/* 고정 레이아웃 */}

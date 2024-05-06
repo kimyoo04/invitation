@@ -90,6 +90,7 @@ export const data = {
     },
     images: {
       main: 'wedding_main',
+      sub: 'wedding_sub',
       gallery: [
         'wedding_01',
         'wedding_02',
@@ -98,6 +99,7 @@ export const data = {
         'wedding_05',
         'wedding_06',
       ],
+      thanks: 'wedding_thanks',
     },
     attendCount: 0,
   },
