@@ -5,8 +5,6 @@ export default function WayInfo() {
 
   return (
     <div className="flex w-full flex-col gap-4">
-      <h2 className="text-2xl">오시는 길</h2>
-
       <div>
         <div className="text-sm">{name}</div>
         <div className="text-sm">{address}</div>

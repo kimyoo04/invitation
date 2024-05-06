@@ -1,4 +1,4 @@
-import { Center, Section } from '@/layouts'
+import { Center, ContentGroup, Section } from '@/layouts'
 
 import NaverMap from './NaverMap'
 import WayInfo from './WayInfo'
@@ -6,10 +6,12 @@ import WayInfo from './WayInfo'
 export default function WayToCome() {
   return (
     <Section>
-      <Center.Column className="w-full gap-8">
-        <NaverMap />
-        <WayInfo />
-      </Center.Column>
+      <ContentGroup title="location">
+        <Center.Column className="w-full gap-8">
+          <NaverMap />
+          <WayInfo />
+        </Center.Column>
+      </ContentGroup>
     </Section>
   )
 }

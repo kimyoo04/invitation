@@ -4,7 +4,7 @@ import { BoldText } from '@/ui'
 export default function Introduce() {
   return (
     <Section>
-      <ContentGroup title="introduce" icon="🔥">
+      <ContentGroup title="introduce">
         <Center.Column>
           <div>저희 두 사람이</div>
           <div>평생을 함께하기 위해</div>
