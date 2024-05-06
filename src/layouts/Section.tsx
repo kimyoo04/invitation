@@ -11,12 +11,7 @@ export default function Section({
   children,
 }: PropsWithChildren<SectionProps>) {
   return (
-    <section
-      className={clsx([
-        'border border-solid border-black bg-orange-50 p-4',
-        className,
-      ])}
-    >
+    <section className={clsx(['bg-orange-50 p-4', className])}>
       {children}
     </section>
   )
