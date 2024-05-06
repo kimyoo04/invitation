@@ -25,11 +25,19 @@ const getDaysInMonth = ({
 export default function CalendarContent() {
   const year = 2025
   const month = 11
+  const dDay = 25
 
   const days = getDaysInMonth({ year, month })
   const startDay = daysOfWeek.indexOf(days[0].day)
   const emptyDays = Array.from({ length: startDay }, (_, i) => i)
-  const sundayHighlight = (day: string) => (day === '일' ? 'text-red-500' : '')
+
+  const highlightSunday = (day: string) => {
+    return day === '일' ? 'text-red-500' : ''
+  }
+
+  const HighlightDDay = (day: number) => {
+    return day === dDay ? 'bg-orange-300 rounded-full text-white font-bold' : ''
+  }
 
   return (
     <div className="p-4">
@@ -37,14 +45,14 @@ export default function CalendarContent() {
 
       <div className="grid grid-cols-7 gap-2 text-center">
         {daysOfWeek.map((day, indx) => (
-          <div key={indx} className={clsx(['font-bold', sundayHighlight(day)])}>
+          <div key={indx} className={clsx(['font-bold', highlightSunday(day)])}>
             {day}
           </div>
         ))}
 
         {emptyDays.map((_, indx) => {
           return (
-            <div key={indx} className="px-3 py-2">
+            <div key={indx} className="p-2">
               <span className="block"></span>
             </div>
           )
@@ -54,9 +62,13 @@ export default function CalendarContent() {
           return (
             <div
               key={indx + day.day}
-              className={clsx(['px-3 py-2', sundayHighlight(day.day)])}
+              className={clsx([
+                'flex h-10 w-10 items-center justify-center',
+                highlightSunday(day.day),
+                HighlightDDay(day.date),
+              ])}
             >
-              <span className="block">{day.date}</span>
+              <span>{day.date}</span>
             </div>
           )
         })}
