@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { pad } from '@/utils/format'
+import { pad } from '@/utils'
 
 const calculateTimeRemaining = (targetDate: Date) => {
   const now = new Date()

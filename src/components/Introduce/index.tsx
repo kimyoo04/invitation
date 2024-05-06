@@ -1,7 +1,5 @@
-import ContentGroup from '@/layouts/ContentGroup'
-import Section from '@/layouts/Section'
-import BoldText from '@/ui/BoldText'
-import Center from '@/ui/Center'
+import { Center, ContentGroup, Section } from '@/layouts'
+import { BoldText } from '@/ui'
 
 export default function Introduce() {
   return (

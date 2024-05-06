@@ -26,9 +26,7 @@ function RowCenter({ className, children }: PropsWithChildren<CenterProps>) {
   )
 }
 
-const Center = {
+export const Center = {
   Column: ColumnCenter,
   Row: RowCenter,
 }
-
-export default Center

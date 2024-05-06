@@ -1,6 +1,5 @@
 import { data } from '@/constants/data'
-import Section from '@/layouts/Section'
-import Center from '@/ui/Center'
+import { Center, Section } from '@/layouts'
 
 import Family from './Family'
 

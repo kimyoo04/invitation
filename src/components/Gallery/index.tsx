@@ -1,7 +1,6 @@
 import { data } from '@/constants/data'
-import Section from '@/layouts/Section'
-import Center from '@/ui/Center'
-import ImageComponent from '@/ui/ImageComponent'
+import { Center, Section } from '@/layouts'
+import { ImageComponent } from '@/ui'
 
 import ViewMoreButton from './ViewMoreButton'
 

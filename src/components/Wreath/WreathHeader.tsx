@@ -1,4 +1,4 @@
-import Center from '@/ui/Center'
+import { Center } from '@/layouts'
 
 export default function WreathHeader() {
   return (

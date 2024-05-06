@@ -1,6 +1,6 @@
 import { data } from '@/constants/data'
-import Section from '@/layouts/Section'
-import ImageWithText from '@/ui/ImageWithText'
+import { Section } from '@/layouts'
+import { ImageWithText } from '@/ui'
 
 export default function Heading() {
   return (

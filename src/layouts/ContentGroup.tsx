@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 
-import Center from '@/ui/Center'
+import Center from '@/layouts/Center'
 
 import Divider from './Divider'
 

@@ -1,10 +1,11 @@
-export { default as ContentGroup } from './ContentGroup'
-export { default as Divider } from './Divider'
-export { default as Flex } from './Flex'
-export { default as FloatingBar } from './FloatingBar'
-export { default as Loading } from './Loading'
-export { default as MaxWidthContainer } from './MaxWidthContainer'
-export { default as Navigation } from './Navigation'
-export { default as Section } from './Section'
-export { default as Stack } from './Stack'
-export { default as LeftStickyBar } from './StickyBar'
+export { Center } from './Center';
+export { default as ContentGroup } from './ContentGroup';
+export { default as Divider } from './Divider';
+export { default as Flex } from './Flex';
+export { default as FloatingBar } from './FloatingBar';
+export { default as Loading } from './Loading';
+export { default as MaxWidthContainer } from './MaxWidthContainer';
+export { default as Navigation } from './Navigation';
+export { default as Section } from './Section';
+export { default as Stack } from './Stack';
+export { default as LeftStickyBar } from './StickyBar';

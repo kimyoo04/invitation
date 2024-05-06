@@ -1,5 +1,4 @@
-import Section from '@/layouts/Section'
-import Center from '@/ui/Center'
+import { Center, Section } from '@/layouts'
 
 import WreathHeader from './WreathHeader'
 import WreathImage from './WreathImage'
