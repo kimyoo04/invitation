@@ -11,7 +11,7 @@ export default function DDayCountDown() {
   const timeRemaining = useCalculateTimeRemaining(targetDate)
 
   return (
-    <Section>
+    <Section title="유 그리고 유진의 결혼식 남은 시간">
       <Center.Row>
         <Center.Row className="w-80 justify-between">
           <NumberArea value={timeRemaining.days} unit="days" />

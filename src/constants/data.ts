@@ -28,13 +28,15 @@ export const data = {
         ],
       },
     },
-    groom: {
+    groomFamily: {
       type: '신랑측',
-      name: '김유',
-      phoneNumber: '010-8131-5224',
-      account: {
-        bankName: '농협',
-        accountNumber: '110-356-123433',
+      person: {
+        name: '김유',
+        phoneNumber: '010-8131-5224',
+        account: {
+          bankName: '농협',
+          accountNumber: '110-356-123433',
+        },
       },
       parents: [
         {
@@ -55,13 +57,15 @@ export const data = {
         },
       ],
     },
-    bride: {
+    brideFamily: {
       type: '신부측',
-      name: '고유진',
-      phoneNumber: '010-6667-6187',
-      account: {
-        bankName: '신한',
-        accountNumber: '352-0952-4669-11',
+      person: {
+        name: '고유진',
+        phoneNumber: '010-6667-6187',
+        account: {
+          bankName: '신한',
+          accountNumber: '352-0952-4669-11',
+        },
       },
       parents: [
         {
