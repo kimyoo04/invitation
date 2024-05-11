@@ -11,6 +11,12 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        gowun: ['Gowun Dodum', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        han: ['Black Han Sans', 'sans-serif'],
+        bodoni: ['Bodoni Moda', 'serif'],
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
