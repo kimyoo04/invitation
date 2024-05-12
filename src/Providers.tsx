@@ -5,6 +5,7 @@ import { createRouter, RouterProvider } from '@tanstack/react-router'
 
 import Loading from './layouts/Loading'
 import { routeTree } from './routeTree.gen'
+import { ThemeProvider } from './ThemeProvider'
 
 const queryClient = new QueryClient()
 
@@ -31,7 +32,9 @@ export default function Providers() {
   return (
     <Suspense fallback={<Loading />}>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+          <RouterProvider router={router} />
+        </ThemeProvider>
       </QueryClientProvider>
     </Suspense>
   )
