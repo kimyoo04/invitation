@@ -12,7 +12,7 @@ export default function DDayCountDown() {
 
   return (
     <Section title="D-Day">
-      <h3 className="mb-2 text-lg">유 그리고 유진의 결혼식 남은 시간</h3>
+      <h3 className="m-auto mb-2 text-lg">유 그리고 유진의 결혼식 남은 시간</h3>
 
       <Center.Row>
         <Center.Row className="w-80 justify-between">
