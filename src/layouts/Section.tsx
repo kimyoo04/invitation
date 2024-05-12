@@ -30,8 +30,8 @@ export default function Section({
   )
 
   return (
-    <section className={clsx(['px-4 py-8', className])}>
-      <Center.Column className="gap-8">
+    <section id={title} className={clsx(['px-4 py-8', className])}>
+      <Center.Column className="items-stretch gap-8">
         {title ? titleAndBorder : null}
 
         {children}
