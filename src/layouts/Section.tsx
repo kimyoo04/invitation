@@ -24,7 +24,7 @@ export default function Section({
   const titleAndBorder = (
     <Center.Row className="w-full gap-4">
       {icon ? icon : null}
-      <h3 className="font-bodoni text-nowrap text-2xl">{title}</h3>
+      <h3 className="text-nowrap font-bodoni text-2xl">{title}</h3>
       <Divider />
     </Center.Row>
   )

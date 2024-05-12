@@ -1,2 +1,2 @@
-export { cn } from './cn';
-export { pad } from './format';
+export { cn } from './cn'
+export { pad } from './format'
