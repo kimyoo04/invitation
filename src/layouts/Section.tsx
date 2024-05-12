@@ -11,25 +11,27 @@ interface SectionProps {
   className?: string
   title?: ReactNode
   icon?: ReactNode
+  background?: ReactNode
 }
 
 export default function Section({
   className,
   title,
   icon,
+  background,
   children,
 }: PropsWithChildren<SectionProps>) {
   const titleAndBorder = (
-    <Center.Column className="w-full">
+    <Center.Row className="w-full gap-4">
       {icon ? icon : null}
-      <h3 className="text-2xl">{title}</h3>
+      <h3 className="font-bodoni text-nowrap text-2xl">{title}</h3>
       <Divider />
-    </Center.Column>
+    </Center.Row>
   )
 
   return (
-    <section className={clsx(['bg-orange-50 p-4', className])}>
-      <Center.Column className="gap-4">
+    <section className={clsx(['bg-orange-50 px-4 py-8', className])}>
+      <Center.Column className="gap-8">
         {title ? titleAndBorder : null}
 
         {children}
