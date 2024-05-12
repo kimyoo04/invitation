@@ -15,7 +15,7 @@ export default function Introduce() {
         <div>자리하시어 축복해 주시면</div>
         <div>대단히 감사하겠습니다.</div>
       </Center.Column>
-      <br />
+
       <Center.Column>
         <div>
           <BoldText>김종관</BoldText>

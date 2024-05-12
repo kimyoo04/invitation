@@ -5,7 +5,7 @@ import WreathHeader from './WreathHeader'
 
 export default function Wreath() {
   return (
-    <Section title="wreath">
+    <Section title="Wreath">
       <Center.Column className="gap-8">
         <WreathHeader />
         <WreathContent />

@@ -30,7 +30,7 @@ export default function Section({
   )
 
   return (
-    <section className={clsx(['bg-orange-50 px-4 py-8', className])}>
+    <section className={clsx(['px-4 py-8', className])}>
       <Center.Column className="gap-8">
         {title ? titleAndBorder : null}
 
