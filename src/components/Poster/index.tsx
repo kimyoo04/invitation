@@ -2,7 +2,7 @@ import { data } from '@/constants/data'
 import { Section } from '@/layouts'
 import { ImageWithText } from '@/ui'
 
-export default function Heading() {
+export default function Poster() {
   return (
     <Section>
       <ImageWithText

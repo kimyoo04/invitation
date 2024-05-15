@@ -8,7 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/shadcn/ui/accordion'
-import { Separator } from '@/shadcn/ui/separator'
 
 import Profile from './Profile'
 
@@ -34,7 +33,6 @@ export default function Account() {
                   ))}
                 </AccordionContent>
               </AccordionItem>
-              <Separator />
             </Fragment>
           ))}
         </Accordion>

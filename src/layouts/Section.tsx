@@ -2,10 +2,10 @@ import clsx from 'clsx'
 
 import { PropsWithChildren } from 'react'
 
+import { Separator } from '@/shadcn/ui/separator'
 import { ReactNode } from '@tanstack/react-router'
 
 import { Center } from './Center'
-import Divider from './Divider'
 
 interface SectionProps {
   className?: string
@@ -25,7 +25,7 @@ export default function Section({
     <Center.Row className="w-full gap-4">
       {icon ? icon : null}
       <h3 className="text-nowrap font-bodoni text-2xl">{title}</h3>
-      <Divider />
+      <Separator className="h-[1px] shrink bg-black" />
     </Center.Row>
   )
 
