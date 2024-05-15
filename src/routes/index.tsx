@@ -5,10 +5,11 @@ import DDayCountDown from '@/components/DDayCountDown'
 import Footer from '@/components/Footer'
 import Gallery from '@/components/Gallery'
 import GuestBook from '@/components/GuestBook'
-import Heading from '@/components/Heading'
 import Introduce from '@/components/Introduce'
 import Poem from '@/components/Poem'
+import Poster from '@/components/Poster'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import ScrollVideo from '@/components/ScrollVideo'
 import Thanks from '@/components/Thanks'
 import TwoPortraits from '@/components/TwoPortraits'
 import WayToCome from '@/components/WayToCome'
@@ -31,7 +32,8 @@ function Home() {
   return (
     <>
       {/* 콘텐츠 */}
-      <Heading />
+      <ScrollVideo />
+      <Poster />
       <Poem />
       <Introduce />
       <ScrollAnimation />
@@ -55,7 +57,7 @@ function Home() {
 
 {
   /*
-  Heading - 메인 화면
+  Poster - 메인 화면
   Poem - 시 문구
   Introduce - 결혼식 초대 문구
   ScrollAnimation - 스크롤 이벤트에 따른 애니메이션
