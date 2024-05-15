@@ -33,27 +33,15 @@ export const data = {
       person: {
         name: '김유',
         phoneNumber: '010-8131-5224',
-        account: {
-          bankName: '농협',
-          accountNumber: '110-356-123433',
-        },
       },
       parents: [
         {
           name: '김종관',
           phoneNumber: '010-4190-5224',
-          account: {
-            bankName: '농협',
-            accountNumber: '233331-51-061400',
-          },
         },
         {
           name: '배미영',
           phoneNumber: '010-9148-5224',
-          account: {
-            bankName: '농협',
-            accountNumber: '352-1252-4559-90',
-          },
         },
       ],
     },
@@ -62,27 +50,15 @@ export const data = {
       person: {
         name: '고유진',
         phoneNumber: '010-6667-6187',
-        account: {
-          bankName: '신한',
-          accountNumber: '352-0952-4669-11',
-        },
       },
       parents: [
         {
           name: '고현범',
           phoneNumber: '010-6667-6187',
-          account: {
-            bankName: '신한',
-            accountNumber: '3333-1112-11932',
-          },
         },
         {
           name: '배태주',
           phoneNumber: '010-3396-6187',
-          account: {
-            bankName: '신한',
-            accountNumber: '222-19-8842-472',
-          },
         },
       ],
     },

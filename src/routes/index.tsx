@@ -1,4 +1,3 @@
-import Account from '@/components/Account'
 import Calendar from '@/components/Calendar'
 import Contact from '@/components/Contact'
 import DDayCountDown from '@/components/DDayCountDown'
@@ -44,7 +43,6 @@ function Home() {
       <Contact />
       <WayToCome />
       <Wreath />
-      <Account />
       <GuestBook />
       <Thanks />
       <Footer />

@@ -3,10 +3,6 @@ import { Flex } from '@/layouts'
 export type ProfileType = {
   name: string
   phoneNumber: string
-  account: {
-    bankName: string
-    accountNumber: string
-  }
 }
 
 interface ProfileProps {
