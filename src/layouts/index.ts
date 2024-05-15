@@ -1,5 +1,4 @@
 export { Center } from './Center'
-export { default as Divider } from './Divider'
 export { default as Flex } from './Flex'
 export { default as FloatingBar } from './FloatingBar'
 export { default as Loading } from './Loading'
