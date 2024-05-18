@@ -10,20 +10,24 @@ const __dirname = path.dirname(__filename)
 // 커맨드 라인에서 디렉토리 경로 인자 받기
 const targetDir = process.argv[2]
 const directoryPath = path.join(__dirname, targetDir) // 디렉토리 경로 설정
-const outputPath = path.join(directoryPath, 'index.ts')
 
 // 파일에서 export 문을 파싱하는 함수
-function parseExports(fileContent) {
+function parseExports(fileContent, fileNameWithoutExt) {
   const namedExports = []
+  const typeExports = []
   let defaultExportName = null
   const exportRegex =
-    /export\s+(default\s+)?(?:const|let|var|function|class|async function)\s+(\w+)/g
+    /export\s+(default\s+)?(?:const|let|var|function|class|async function|type)?\s*([\w]+)/g
   const exportNamedRegex = /export\s+{([^}]+)}/g
 
   let match
   while ((match = exportRegex.exec(fileContent))) {
     if (match[1] === 'default ') {
-      defaultExportName = match[2]
+      defaultExportName = fileNameWithoutExt // default export는 파일명으로 사용
+    } else if (
+      fileContent.slice(match.index, match.index + 11).includes('export type')
+    ) {
+      typeExports.push(match[2])
     } else {
       namedExports.push(match[2])
     }
@@ -41,48 +45,65 @@ function parseExports(fileContent) {
     })
   }
 
-  return { defaultExportName, namedExports }
+  return { defaultExportName, namedExports, typeExports }
 }
 
 // index.mjs 파일을 생성하는 함수
 async function buildIndex(directory) {
-  let files = await fs.promises.readdir(directory)
-  files = files.filter((file) => file !== 'index.ts') // index.ts 파일 제외
+  let files = await fs.promises.readdir(directory, { withFileTypes: true })
+  files = files.filter((file) => file.name !== 'index.ts') // index.ts 파일 제외
 
   let indexContent = ''
-
-  // 기존 index.ts 파일이 있으면 삭제
-  if (fs.existsSync(outputPath)) {
-    await fs.promises.unlink(outputPath)
-  }
+  let hasValidExports = false
 
   for (const file of files) {
-    if (!/\.(ts|tsx|js)$/.test(file)) continue // 확장자 필터링
-    const filePath = path.join(directory, file)
-    const fileNameWithoutExt = file.replace(/\.(ts|tsx|js)$/, '') // 확장자 제거
-    const fileContent = await fs.promises.readFile(filePath, 'utf8')
-    const { defaultExportName, namedExports } = parseExports(fileContent)
+    const filePath = path.join(directory, file.name)
+    if (file.isDirectory()) {
+      await buildIndex(filePath) // 하위 디렉토리 순회
+      const subDirFiles = await fs.promises.readdir(filePath)
+      if (subDirFiles.length > 0) {
+        indexContent += `export * from './${file.name}/index';\n`
+        hasValidExports = true
+      }
+    } else if (/\.(ts|tsx|js)$/.test(file.name)) {
+      const fileNameWithoutExt = file.name.replace(/\.(ts|tsx|js)$/, '') // 확장자 제거
+      const fileContent = await fs.promises.readFile(filePath, 'utf8')
+      const { defaultExportName, namedExports, typeExports } = parseExports(
+        fileContent,
+        fileNameWithoutExt,
+      )
 
-    if (defaultExportName || namedExports.length > 0) {
-      let exportLine = `export { `
-      if (defaultExportName) {
-        exportLine += `default as ${defaultExportName}`
-        if (namedExports.length > 0) {
+      if (
+        defaultExportName ||
+        namedExports.length > 0 ||
+        typeExports.length > 0
+      ) {
+        let exportLine = `export { `
+        if (defaultExportName) {
+          exportLine += `default as ${defaultExportName}`
+          if (namedExports.length > 0 || typeExports.length > 0) {
+            exportLine += `, `
+          }
+        }
+        exportLine += namedExports.join(', ')
+        if (namedExports.length > 0 && typeExports.length > 0) {
           exportLine += `, `
         }
+        exportLine += typeExports.map((type) => `type ${type}`).join(', ')
+        exportLine += ` } from './${fileNameWithoutExt}';`
+        indexContent += exportLine + '\n'
+        hasValidExports = true
       }
-      exportLine += namedExports.join(', ')
-      exportLine += ` } from './${fileNameWithoutExt}';`
-      indexContent += exportLine + '\n'
     }
   }
 
-  if (indexContent) {
+  const outputPath = path.join(directory, 'index.ts')
+  if (hasValidExports) {
     await fs.promises.writeFile(outputPath, indexContent)
     console.log('=== Index file created ===')
     console.log(`ㄴ ${outputPath}`)
   } else {
-    console.log('No exports found in any file.')
+    console.log(`No exports found in directory: ${directory}`)
   }
 }
 
@@ -90,4 +111,4 @@ async function buildIndex(directory) {
 buildIndex(directoryPath).catch(console.error)
 
 // 실행 예시
-// node generate-index.mjs ./src/components
+// node indexBuilder.mjs ./src/components
