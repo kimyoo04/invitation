@@ -1,4 +1,4 @@
-import { Flex } from '@/layouts'
+import { Flex } from '@/components/layouts'
 
 export type ProfileType = {
   name: string

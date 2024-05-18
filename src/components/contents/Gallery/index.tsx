@@ -1,6 +1,6 @@
+import { Center, Section } from '@/components/layouts'
+import { ImageComponent } from '@/components/ui'
 import { data } from '@/constants/data'
-import { Center, Section } from '@/layouts'
-import { ImageComponent } from '@/ui'
 
 import ViewMoreButton from './ViewMoreButton'
 

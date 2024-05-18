@@ -1,4 +1,4 @@
-import { Center } from '@/layouts'
+import { Center } from '@/components/layouts'
 
 export default function WreathHeader() {
   return (

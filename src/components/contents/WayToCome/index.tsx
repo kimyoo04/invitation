@@ -1,4 +1,4 @@
-import { Center, Section } from '@/layouts'
+import { Center, Section } from '@/components/layouts'
 
 import NaverMap from './NaverMap'
 import WayInfo from './WayInfo'

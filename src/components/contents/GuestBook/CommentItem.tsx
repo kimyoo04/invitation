@@ -1,4 +1,4 @@
-import { Center } from '@/layouts'
+import { Center } from '@/components/layouts'
 import { Button } from '@/shadcn/ui/button'
 
 type Comment = {

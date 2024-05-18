@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 
+import { Center } from '@/components/layouts'
 import { data } from '@/constants/data'
-import { Center } from '@/layouts'
 
 const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토']
 const months = Array.from({ length: 13 }, (_, i) => i) // 0 ~ 12

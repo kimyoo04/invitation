@@ -1,6 +1,6 @@
 import { useCallback, useReducer } from 'react'
 
-import { Center, Section } from '@/layouts'
+import { Center, Section } from '@/components/layouts'
 import { Button } from '@/shadcn/ui/button'
 
 import CommentEditor from './CommentEditor'

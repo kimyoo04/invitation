@@ -2,7 +2,7 @@ import clsx from 'clsx'
 
 import { useState } from 'react'
 
-import { Stack } from '@/layouts'
+import { Stack } from '@/components/layouts'
 import { buttonVariants } from '@/shadcn/ui/button'
 import {
   Collapsible,

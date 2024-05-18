@@ -1,8 +1,8 @@
 import { FormProvider } from 'react-hook-form'
 
-import { Stack } from '@/layouts'
-import RHFInput from '@/RHF/RHFInput'
-import RHFTextarea from '@/RHF/RHFTextarea'
+import { Stack } from '@/components/layouts'
+import RHFInput from '@/components/RHF/RHFInput'
+import RHFTextarea from '@/components/RHF/RHFTextarea'
 import { Button } from '@/shadcn/ui/button'
 
 import useCommentSubmit from './useCommentSubmit'

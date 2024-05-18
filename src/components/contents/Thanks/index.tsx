@@ -1,6 +1,6 @@
+import { Center, Section } from '@/components/layouts'
+import { ImageWithText } from '@/components/ui'
 import { data } from '@/constants/data'
-import { Center, Section } from '@/layouts'
-import { ImageWithText } from '@/ui'
 
 export default function Thanks() {
   return (

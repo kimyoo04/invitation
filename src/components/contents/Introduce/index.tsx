@@ -1,5 +1,5 @@
-import { Center, Section } from '@/layouts'
-import { BoldText } from '@/ui'
+import { Center, Section } from '@/components/layouts'
+import { BoldText } from '@/components/ui'
 
 export default function Introduce() {
   return (
