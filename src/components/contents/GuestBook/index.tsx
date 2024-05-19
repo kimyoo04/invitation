@@ -1,13 +1,15 @@
-import { useCallback, useReducer } from 'react'
+import { useCallback } from 'react'
 
 import { Center, Section } from '@/components/layouts'
 import { Button } from '@/shadcn/ui/button'
+import useCommentStore from '@/stores/commentStore'
 
 import CommentEditor from './CommentEditor'
 import CommentList from './CommentList'
 
 export default function GuestBook() {
-  const [openEditor, toggleEditor] = useReducer((state) => !state, false)
+  const showEditor = useCommentStore((state) => state.showEditor)
+  const toggleEditor = useCommentStore((state) => state.toggleEditor)
 
   const handleToggleEditor = useCallback(() => {
     toggleEditor()
@@ -21,17 +23,17 @@ export default function GuestBook() {
         </h3>
 
         <Button
-          variant={openEditor ? 'destructive' : 'default'}
+          variant={showEditor ? 'destructive' : 'default'}
           size={'sm'}
           className="w-20"
           onClick={handleToggleEditor}
         >
-          {openEditor ? '취소' : '작성하기'}
+          {showEditor ? '취소' : '작성하기'}
         </Button>
       </Center.Row>
 
       <div className="font-roboto">
-        {openEditor ? <CommentEditor /> : <CommentList />}
+        {showEditor ? <CommentEditor /> : <CommentList />}
       </div>
     </Section>
   )

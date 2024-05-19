@@ -1,14 +1,30 @@
+import { useCallback } from 'react'
+
 import { Center } from '@/components/layouts'
 import { Button } from '@/shadcn/ui/button'
+import useCommentStore from '@/stores/commentStore'
+import { IComment } from '@/supabase/commentService'
 
-type Comment = {
-  id: string
-  name: string
-  message: string
-  createdAt: string
-}
+function CommentItemHeader({
+  id,
+  name,
+  password,
+  created_at,
+}: Omit<IComment, 'content'>) {
+  const setCommentId = useCommentStore((state) => state.setCommentId)
 
-function CommentItemHeader({ id, name, createdAt }: Omit<Comment, 'message'>) {
+  const handleUpdateClick = useCallback(() => {
+    console.log('update')
+    // TODO - 수정 전 비밀번호 확인 다이얼로그 추가
+
+    setCommentId(id)
+  }, [])
+
+  const handleDeleteClick = useCallback(() => {
+    console.log('delete')
+    // TODO - 비밀번호 확인 다이얼로그 추가
+  }, [])
+
   const buttonStyle =
     'text-regular h-auto p-1 text-gray-400 font-thin hover:text-primary hover:no-underline'
 
@@ -16,15 +32,23 @@ function CommentItemHeader({ id, name, createdAt }: Omit<Comment, 'message'>) {
     <div className="mb-1 flex justify-between">
       <Center.Row className="gap-1">
         <span>{name}</span>
-        <span className="text-xs text-gray-400">{createdAt}</span>
+        <span className="text-xs text-gray-400">{created_at}</span>
       </Center.Row>
 
       <div className="text-xs text-gray-400">
-        <Button variant={'link'} className={buttonStyle}>
+        <Button
+          variant={'link'}
+          className={buttonStyle}
+          onClick={handleUpdateClick}
+        >
           수정
         </Button>
         <span> | </span>
-        <Button variant={'link'} className={buttonStyle}>
+        <Button
+          variant={'link'}
+          className={buttonStyle}
+          onClick={handleDeleteClick}
+        >
           삭제
         </Button>
       </div>
@@ -32,17 +56,17 @@ function CommentItemHeader({ id, name, createdAt }: Omit<Comment, 'message'>) {
   )
 }
 
-function CommentContent({ message }: Pick<Comment, 'message'>) {
-  return <p className="">{message}</p>
+function CommentContent({ content }: Pick<IComment, 'content'>) {
+  return <p className="">{content}</p>
 }
 
-export default function CommentItem({ comment }: { comment: Comment }) {
-  const { id, name, message, createdAt } = comment
+export default function CommentItem({ comment }: { comment: IComment }) {
+  const { content, ...rest } = comment
 
   return (
     <div className="w-full">
-      <CommentItemHeader id={id} name={name} createdAt={createdAt} />
-      <CommentContent message={message} />
+      <CommentItemHeader {...rest} />
+      <CommentContent content={content} />
     </div>
   )
 }
