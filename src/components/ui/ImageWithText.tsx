@@ -6,7 +6,7 @@ interface Props {
   text?: ReactNode
 }
 
-export default function ImageWithText({ src, alt, text }: Props) {
+export function ImageWithText({ src, alt, text }: Props) {
   return (
     <div className="relative ">
       <img src={src} alt={alt} className="w-full rounded-md object-cover" />

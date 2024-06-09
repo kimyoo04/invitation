@@ -7,7 +7,7 @@ interface Props {
   alt: string
 }
 
-export default function ImageComponent({ src, alt }: Props) {
+export function ImageComponent({ src, alt }: Props) {
   const image = (
     <div className="h-full w-full ">
       <img
