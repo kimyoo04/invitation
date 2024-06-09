@@ -8,7 +8,7 @@ import Introduce from '@/components/contents/Introduce'
 import Poem from '@/components/contents/Poem'
 import Poster from '@/components/contents/Poster'
 import ScrollAnimation from '@/components/contents/ScrollAnimation'
-import ScrollVideo from '@/components/contents/ScrollVideo'
+import ScrollImageSlide from '@/components/contents/ScrollImageSlide'
 import Thanks from '@/components/contents/Thanks'
 import TwoPortraits from '@/components/contents/TwoPortraits'
 import WayToCome from '@/components/contents/WayToCome'
@@ -19,9 +19,6 @@ import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
   component: Home,
-  beforeLoad: () => {
-    console.log('beforeLoad')
-  },
   errorComponent: ({ error }) => {
     return <ErrorBoundary error={error} />
   },
@@ -31,7 +28,7 @@ function Home() {
   return (
     <>
       {/* 콘텐츠 */}
-      <ScrollVideo />
+      {/* <ScrollImageSlide /> */}
       <Poster />
       <Poem />
       <Introduce />
@@ -55,6 +52,7 @@ function Home() {
 
 {
   /*
+  ScrollImageSlide - 스크롤에 따른 이미지 슬라이드
   Poster - 메인 화면
   Poem - 시 문구
   Introduce - 결혼식 초대 문구

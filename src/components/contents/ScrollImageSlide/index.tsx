@@ -1,13 +1,17 @@
 import { useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
 
-import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { useCallback, useLayoutEffect, useMemo, useRef } from 'react'
 
 // reference - https://github.com/codegenixdev/video-scrolling-tutorial/blob/main/src/App.tsx
 
+//! 이미지 개수 조절
 const startIndex = 1
 const endIndex = 86
 
-export default function ScrollVideo() {
+//! spacer - 이미지들이 등장하기 전에 스크롤 높이 조절
+const startHeight = '100vh'
+
+export default function ScrollImageSlide() {
   const ref = useRef<HTMLCanvasElement>(null)
 
   const { scrollYProgress } = useScroll({
@@ -15,12 +19,12 @@ export default function ScrollVideo() {
     offset: ['center end', 'start start'],
   })
 
-  const images = useMemo(() => {
+  const imageArr = useMemo(() => {
     const loadedImages: HTMLImageElement[] = []
 
     for (let i = 1; i <= 86; i++) {
       const img = new Image()
-      img.src = `/images/${i}.webp`
+      img.src = `/images/ScrollImageSlide/${i}.webp`
       loadedImages.push(img)
     }
 
@@ -29,11 +33,11 @@ export default function ScrollVideo() {
 
   const render = useCallback(
     (index: number) => {
-      if (images[index - 1] && ref.current) {
-        ref.current?.getContext('2d')?.drawImage(images[index - 1], 0, 0)
+      if (imageArr[index - 1] && ref.current) {
+        ref.current?.getContext('2d')?.drawImage(imageArr[index - 1], 0, 0)
       }
     },
-    [images],
+    [imageArr],
   )
 
   const currentIndex = useTransform(
@@ -46,21 +50,16 @@ export default function ScrollVideo() {
     render(Number(latest.toFixed()))
   })
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     render(1)
   }, [render])
 
   return (
-    <div
-      style={{
-        height: '200vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'flex-end',
-      }}
-    >
-      <div style={{ height: '1000px' }} />
-      <canvas ref={ref} width={1000} height={1000} />
+    <div className="flex items-end justify-center">
+      {/* spacer - 이미지들이 등장하기 전에 스크롤 높이 조절용 태그 */}
+      <div className={`h-[${startHeight}]`} />
+
+      <canvas ref={ref} width={'100%'} height={'100%'} />
     </div>
   )
 }
