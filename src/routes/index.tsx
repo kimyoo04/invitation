@@ -4,6 +4,7 @@ import DDayCountDown from '@/components/contents/DDayCountDown'
 import Footer from '@/components/contents/Footer'
 import Gallery from '@/components/contents/Gallery'
 import GuestBook from '@/components/contents/GuestBook'
+import InitialLoading from '@/components/contents/InitialLoading'
 import Introduce from '@/components/contents/Introduce'
 import Poem from '@/components/contents/Poem'
 import Poster from '@/components/contents/Poster'
@@ -46,6 +47,7 @@ function Home() {
 
       {/* 고정 레이아웃 */}
       {/* <StickyBar /> */}
+      <InitialLoading />
     </>
   )
 }

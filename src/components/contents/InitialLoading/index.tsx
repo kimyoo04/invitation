@@ -1,34 +1,18 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { useLayoutEffect, useState } from 'react'
+import { useState } from 'react'
 
 import { Progress } from '@/shadcn/ui/progress'
 
-//! progress bar 증가 타이밍 조절
-const intervalTime = 60 // ms
-
-//! progress bar 증가량 조절
-const increaseValue = 1
+import useDisableScroll from './useDisableScroll'
+import useProgress from './useProgress'
 
 export default function LoadingOverlay() {
-  const [progress, setProgress] = useState<number>(0)
   const [isComplete, setIsComplete] = useState<boolean>(false)
 
-  useLayoutEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prevProgress) => {
-        if (prevProgress >= 100) {
-          clearInterval(timer)
-          return 100
-        }
-        return prevProgress + increaseValue
-      })
-    }, intervalTime)
+  const { progress } = useProgress()
 
-    return () => {
-      clearInterval(timer)
-    }
-  }, [])
+  useDisableScroll(!isComplete)
 
   if (progress >= 100 && isComplete) {
     return null

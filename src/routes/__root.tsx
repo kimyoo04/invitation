@@ -1,5 +1,4 @@
 import MaxWidthContainer from '@/components/layouts/MaxWidthContainer'
-import InitialLoading from '@/components/ui/InitialLoading'
 import { QueryClient } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { createRootRouteWithContext, Outlet } from '@tanstack/react-router'
@@ -22,7 +21,6 @@ function RootComponent() {
         <Outlet />
       </MaxWidthContainer>
 
-      <InitialLoading />
       {/* <ReactQueryDevtools buttonPosition="top-right" /> */}
       {/* <TanStackRouterDevtools position="bottom-right" /> */}
     </main>

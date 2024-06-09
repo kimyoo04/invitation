@@ -1,5 +1,5 @@
 import { Center, Section } from '@/components/layouts'
-import ImageComponent from '@/components/ui/ImageComponent'
+import { ImageComponent } from '@/components/ui'
 import { data } from '@/constants/data'
 
 export default function Poem() {
