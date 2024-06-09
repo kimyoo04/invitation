@@ -1,10 +1,10 @@
 import { Suspense } from 'react'
 
+import { Loading } from '@/components/layouts'
 import { routeTree } from '@/routeTree.gen'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createRouter, RouterProvider } from '@tanstack/react-router'
 
-import Loading from './layouts/Loading'
 import { ThemeProvider } from './ThemeProvider'
 
 const queryClient = new QueryClient()

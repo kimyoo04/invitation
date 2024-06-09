@@ -8,7 +8,7 @@ function BarItem({ children }: PropsWithChildren) {
   )
 }
 
-export default function LeftStickyBar() {
+export function LeftStickyBar() {
   return (
     <div className="fixed left-10 top-10 flex h-60 w-16 flex-col justify-between bg-black bg-opacity-50">
       {/* 최상단 이동 버튼 */}

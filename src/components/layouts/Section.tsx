@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { PropsWithChildren } from 'react'
+import { forwardRef, PropsWithChildren, Ref } from 'react'
 
 import { Separator } from '@/shadcn/ui/separator'
 import { ReactNode } from '@tanstack/react-router'
@@ -14,13 +14,16 @@ interface SectionProps {
   background?: ReactNode
 }
 
-export default function Section({
-  className,
-  title,
-  icon,
-  background,
-  children,
-}: PropsWithChildren<SectionProps>) {
+function Section(
+  {
+    className,
+    title,
+    icon,
+    background,
+    children,
+  }: PropsWithChildren<SectionProps>,
+  ref: Ref<HTMLDivElement>,
+) {
   const titleAndBorder = (
     <Center.Row className="w-full gap-4">
       {icon ? icon : null}
@@ -30,7 +33,7 @@ export default function Section({
   )
 
   return (
-    <section id={title} className={clsx(['px-4 py-8', className])}>
+    <section ref={ref} id={title} className={clsx(['px-4 py-8', className])}>
       <Center.Column className="items-stretch gap-8">
         {title ? titleAndBorder : null}
 
@@ -39,3 +42,6 @@ export default function Section({
     </section>
   )
 }
+
+const Section_ = forwardRef(Section)
+export { Section_ as Section }

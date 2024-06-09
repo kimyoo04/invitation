@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import React, { PropsWithChildren } from 'react'
+import React, { forwardRef, PropsWithChildren, Ref } from 'react'
 
 interface CenterProps {
   className?: string
