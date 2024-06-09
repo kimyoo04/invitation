@@ -15,7 +15,6 @@ import TwoPortraits from '@/components/contents/TwoPortraits'
 import WayToCome from '@/components/contents/WayToCome'
 import Wreath from '@/components/contents/Wreath'
 import ErrorBoundary from '@/components/error/errorBoundary'
-import StickyBar from '@/components/layouts/StickyBar'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -47,13 +46,14 @@ function Home() {
 
       {/* 고정 레이아웃 */}
       {/* <StickyBar /> */}
-      <InitialLoading />
+      {/* <InitialLoading /> */}
     </>
   )
 }
 
 {
   /*
+  [ 콘텐츠 ]
   ScrollImageSlide - 스크롤에 따른 이미지 슬라이드
   Poster - 메인 화면
   Poem - 시 문구
@@ -70,5 +70,9 @@ function Home() {
   GuestBook - 방명록
   Thanks - 감사합니다 마무리
   Footer - 풋터
+
+  [ 고정 레이아웃 ]
+  StickyBar - 콘텐츠의 사이드에 보이는 바
+  InitialLoading - 초기 로딩 화면
   */
 }
